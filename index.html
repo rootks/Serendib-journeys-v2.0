@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serendib Journeys | Discover Sri Lanka - The Wonder of Asia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Royal Serendib Header with Traditional Liyawela Ornamentation -->
+  <header class="navbar" id="topNav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-crest">
+          <svg viewBox="0 0 100 100" class="crest-svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#d4a34b" stroke-width="3" stroke-dasharray="4 2"/>
+            <circle cx="50" cy="50" r="38" fill="#0c382b" stroke="#f3cf7a" stroke-width="1.5"/>
+            <!-- Stylized sacred lotus petal crest -->
+            <path d="M50 16 C54 28 66 36 66 50 C66 62 50 78 50 78 C50 78 34 62 34 50 C34 36 46 28 50 16 Z" fill="#d4a34b"/>
+            <path d="M50 26 C52 34 58 40 58 50 C58 58 50 68 50 68 C50 68 42 58 42 50 C42 40 48 34 50 26 Z" fill="#fff5d0"/>
+            <circle cx="50" cy="50" r="5" fill="#c85a32"/>
+          </svg>
+        </div>
+        <div class="logo-group">
+          <span class="logo-title">Serendib<strong>Journeys</strong></span>
+          <span class="logo-tagline"><span class="sinhala-script">ආයුබෝවන්</span> • Sri Lanka Wonder of Asia</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="destinations.html" class="nav-link ">Destinations</a>
+        <a href="map-explorer.html" class="nav-link "><span class="live-beacon"></span>Interactive Map</a>
+        <a href="experiences.html" class="nav-link ">Experiences</a>
+        <a href="tours.html" class="nav-link ">Curated Tours</a>
+        <a href="itinerary-planner.html" class="nav-link ">Trip Planner</a>
+        <a href="about.html" class="nav-link ">Heritage</a>
+        <span id="authNavSlot" class="auth-nav-slot"></span>
+        <a href="contact.html" class="btn btn-nav"><span class="btn-lotus">🪷</span> Plan Your Voyage</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- Hero Section with Sri Lankan Mist Atmosphere & Floating Search Engine -->
+  <section class="hero hero-home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="royal-badge">
+        <span>🪷</span> ආයුබෝවන් • Welcome to the Resplendent Isle
+      </div>
+      <h1 class="hero-title">Wander the <span class="gold-highlight">Emerald Isle</span> of Serendib</h1>
+      <p class="hero-subtitle">Misty tea-carpeted mountains, royal rock citadels, leopard-tracked rainforest reserves, and golden palm-fringed Indian Ocean shores crafted into private luxury voyages.</p>
+      
+      <div class="hero-actions">
+        <a href="destinations.html" class="btn btn-gold">Explore Ancient & Wild Wonders &rarr;</a>
+        <a href="map-explorer.html" class="btn btn-outline-gold"><span class="live-beacon"></span> View Interactive Island Map</a>
+        <a href="itinerary-planner.html" class="btn btn-primary">Design Custom Trip</a>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="search-floating-bar">
+        <div class="search-item">
+          <label>Where in Sri Lanka?</label>
+          <select id="quickDestSelect">
+            <option value="destinations.html#sigiriya">Cultural Triangle (Sigiriya, Polonnaruwa)</option>
+            <option value="destinations.html#ella">Highland Tea Trails (Ella, Nuwara Eliya)</option>
+            <option value="destinations.html#yala">Wildlife Kingdoms (Yala, Udawalawe)</option>
+            <option value="destinations.html#galle">Southern Bastions (Galle Fort, Mirissa)</option>
+          </select>
+        </div>
+        <div class="search-item">
+          <label>Signature Experience</label>
+          <select>
+            <option>Ceylon Tea Sommelier Plucking</option>
+            <option>Mirissa Deep Blue Whale Cruise</option>
+            <option>Village Clay-Pot Cooking Class</option>
+            <option>Authentic Hela Wedakama Ayurveda</option>
+          </select>
+        </div>
+        <div class="search-item">
+          <label>Travel Window</label>
+          <select>
+            <option>7 - 10 Days</option>
+            <option selected>10 - 14 Days</option>
+            <option>14+ Days (Grand Tour)</option>
+          </select>
+        </div>
+        <button class="btn btn-gold" onclick="redirectQuickSearch()">Discover Now</button>
+      </div>
+
+      <div class="hero-key-metrics">
+        <div class="metric-pill"><span>🏛️</span> 8 UNESCO World Heritage Citadels</div>
+        <div class="metric-pill"><span>🐆</span> World's Highest Leopard Density</div>
+        <div class="metric-pill"><span>☕</span> 150+ Years Pure Ceylon Single-Estate Tea</div>
+        <div class="metric-pill"><span>🏖️</span> 1,340 km Sun-Drenched Coastline</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sri Lankan Cultural Heritage Introduction -->
+  <section class="section intro-section">
+    <div class="container">
+      <div class="split-row align-center">
+        <div class="split-col text-col">
+          <span class="sub-title">A Land of Serendipity</span>
+          <h2 class="title">Ancient Dynasties, Sacred Relics & Boundless Warmth</h2>
+          <div class="ornamental-divider left"></div>
+          <p class="lead-text">Sri Lanka condenses an awe-inspiring spectrum of microclimates, sacred Buddhist and Hindu pilgrim sites, and breathtaking wildlife sanctuaries into a single tropical gem.</p>
+          <p>Within a four-hour scenic drive, you can ascend from sunny turquoise surf breaks to colonial high-elevation tea plantations swathed in cool morning mist, or track herds of wild elephants drinking beside centuries-old royal irrigation lakes.</p>
+          
+          <div class="check-list">
+            <div class="check-item"><span>🪷</span> Private air-conditioned luxury transport with government-certified English chauffeurs</div>
+            <div class="check-item"><span>🪷</span> Restored colonial planter bungalows, eco-glamping safari tents, and beach villas</div>
+            <div class="check-item"><span>🪷</span> Regenerative, carbon-neutral excursions safeguarding Sri Lanka's delicate ecosystems</div>
+          </div>
+          <div style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="about.html" class="btn btn-primary">Our Royal Island Heritage &rarr;</a>
+            <a href="map-explorer.html" class="btn btn-outline">Explore on Google Map</a>
+          </div>
+        </div>
+        <div class="split-col image-col">
+          <div class="composition-grid">
+            <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80" alt="Nine Arch Bridge Ella Sri Lanka" class="comp-img main-img">
+            <img src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=600&q=80" alt="Sigiriya Fortress" class="comp-img float-img">
+            <div class="exp-badge">
+              <strong>14+</strong>
+              <span>Years of Bespoke Island Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Google Map Teaser Banner -->
+  <section class="section light-bg">
+    <div class="container">
+      <div class="map-explorer-layout">
+        <div class="map-sidebar">
+          <span class="sub-title" style="color: var(--gold-shimmer);">Live Location Navigator</span>
+          <h3 class="map-sidebar-title">Explore Sri Lanka by Region</h3>
+          <p class="map-sidebar-subtitle">Click any iconic destination to pan the live interactive Google Map viewport:</p>
+          
+          <div class="map-place-list">
+            <button class="map-place-btn active" onclick="selectMapLocation('sigiriya', this)">
+              <span class="place-pin">🏰</span>
+              <div class="place-info">
+                <strong>Sigiriya Lion Rock</strong>
+                <span>Cultural Triangle Citadel</span>
+              </div>
+            </button>
+            <button class="map-place-btn" onclick="selectMapLocation('ella', this)">
+              <span class="place-pin">🚂</span>
+              <div class="place-info">
+                <strong>Ella Nine Arch Viaduct</strong>
+                <span>Misty Tea Country & Rail</span>
+              </div>
+            </button>
+            <button class="map-place-btn" onclick="selectMapLocation('yala', this)">
+              <span class="place-pin">🐆</span>
+              <div class="place-info">
+                <strong>Yala National Park</strong>
+                <span>Leopards & Wild Safari</span>
+              </div>
+            </button>
+            <button class="map-place-btn" onclick="selectMapLocation('galle', this)">
+              <span class="place-pin">⚓</span>
+              <div class="place-info">
+                <strong>Galle Dutch Fort</strong>
+                <span>17th-Century Maritime Bastions</span>
+              </div>
+            </button>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="map-explorer.html" class="btn btn-gold full-width">Launch Full Island Map &rarr;</a>
+          </div>
+        </div>
+
+        <div class="map-viewport-wrapper">
+          <div class="map-iframe-container">
+            <iframe id="googleMapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15799.645479008778!2d80.75053748281143!3d7.957027966779412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afca0dfa7cedbed%3A0x6b823e20e8b23f81!2sSigiriya!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="map-floating-details">
+            <div class="map-details-text">
+              <h4 id="mapPlaceTitle">Sigiriya Lion Rock Sky Palace</h4>
+              <p id="mapPlaceDesc">Ancient 5th-century royal citadel with UNESCO water gardens, mirrored wall, and sheer 200m vertical monolith climb.</p>
+              <small id="mapPlaceCoords" style="color: var(--ceylon-terracotta); font-weight: 700;">Central Province • Matale • Coordinates: 7.9570° N, 80.7603° E</small>
+            </div>
+            <a href="destinations.html#sigiriya" id="mapPlaceLink" class="btn btn-primary" style="white-space: nowrap;">Explore Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <span class="sub-title">Crown Jewels of Ceylon</span>
+          <h2 class="title">Breathtaking Island Destinations</h2>
+          <div class="ornamental-divider left"></div>
+        </div>
+        <a href="destinations.html" class="btn btn-outline">View All 6 Destinations &rarr;</a>
+      </div>
+
+      <div class="card-grid">
+        <!-- Sigiriya Card -->
+        <div class="preview-card">
+          <div class="card-media">
+            <img src="img/Gemini_Generated_Image_yu0cvfyu0cvfyu0c.jpg" alt="Sigiriya Fortress Sri Lanka">
+            <span class="media-tag">UNESCO Sky Citadel</span>
+          </div>
+          <div class="card-content">
+            <span class="card-sub">Central Province • Matale</span>
+            <h3>Sigiriya (Lion Rock)</h3>
+            <p>Ascend King Kashyapa's dramatic 200m monolith fortress featuring ancient frescoes, mirrored walls, and royal pleasure gardens.</p>
+            <div class="card-bottom">
+              <span class="card-meta">Best: Dec – April</span>
+              <a href="destinations.html#sigiriya" class="card-link">Explore Guide &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ella Card -->
+        <div class="preview-card">
+          <div class="card-media">
+            <img src="img/OIP.jpg" alt="Nine Arch Bridge Ella">
+            <span class="media-tag">Highland Rail Marvel</span>
+          </div>
+          <div class="card-content">
+            <span class="card-sub">Central Highlands • Ella</span>
+            <h3>Demodara Nine Arch Viaduct</h3>
+            <p>Stand in awe beneath the colonial stone viaduct framed by emerald tea estates, and ride the world's most scenic blue train.</p>
+            <div class="card-bottom">
+              <span class="card-meta">Best: Jan – May</span>
+              <a href="destinations.html#ella" class="card-link">Explore Guide &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yala Card -->
+        <div class="preview-card">
+          <div class="card-media">
+            <img src="img/1643716790_yala-national-park-wildlife513139585-min.jpg" alt="Sri Lankan Leopard Yala National Park">
+            <span class="media-tag">Wildlife Safari Kingdom</span>
+          </div>
+          <div class="card-content">
+            <span class="card-sub">Southern & Uva Provinces</span>
+            <h3>Yala National Park</h3>
+            <p>Track the apex Sri Lankan Leopard (Panthera pardus kotiya), wild elephant herds, and sloth bears in pristine coastal wilderness.</p>
+            <div class="card-bottom">
+              <span class="card-meta">Best: Feb – July</span>
+              <a href="destinations.html#yala" class="card-link">Explore Guide &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Itinerary Banner -->
+  <section class="section dark-section">
+    <div class="container text-center">
+      <span class="sub-title" style="color: var(--gold-shimmer);">Interactive Expedition Architect</span>
+      <h2 class="title light-text">Build Your Custom Sri Lanka Expedition in Real Time</h2>
+      <div class="ornamental-divider"></div>
+      <p class="description light-muted" style="max-width: 720px; margin: 0 auto 30px;">Select your dream stops across Sri Lanka. Our automated trip engine instantly calculates travel duration, route sequence, and budget projections.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="itinerary-planner.html" class="btn btn-gold">Launch Itinerary Cost Calculator &rarr;</a>
+        <a href="tours.html" class="btn btn-outline-gold">View Curated Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Royal Footer with Traditional Motif Trimming -->
+  <footer class="footer">
+    <div class="footer-ornament-bar"></div>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-crest small">
+            <svg viewBox="0 0 100 100" class="crest-svg"><circle cx="50" cy="50" r="40" fill="#d4a34b"/><path d="M50 20 C60 35 65 50 50 75 C35 50 40 35 50 20 Z" fill="#082b21"/></svg>
+          </div>
+          <div class="logo-group">
+            <span class="logo-title">Serendib<strong>Journeys</strong></span>
+            <span class="logo-tagline">Sri Lanka DMC • Reg #SLTDA/TA/2026/09</span>
+          </div>
+        </a>
+        <p class="brand-desc">Curating authentic, luxury, and regenerative travel through the pearl of the Indian ocean. From cloud-swathed Ceylon tea peaks to the sacred ancient kingdoms.</p>
+        <div class="cultural-greeting-pill">
+          <span class="greeting-si">ආයුබෝවන් (Ayubowan)</span>
+          <span class="greeting-divider">•</span>
+          <span class="greeting-ta">வணக்கம் (Vanakkam)</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Kingdoms & Coast</h4>
+        <ul>
+          <li><a href="destinations.html#sigiriya">Sigiriya Lion Rock Fortress</a></li>
+          <li><a href="destinations.html#ella">Ella & Demodara Nine Arch</a></li>
+          <li><a href="destinations.html#yala">Yala Leopard Territory</a></li>
+          <li><a href="destinations.html#galle">Galle Dutch Bastions</a></li>
+          <li><a href="destinations.html#kandy">Kandy Sri Dalada Maligawa</a></li>
+          <li><a href="map-explorer.html">Interactive Island Google Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Signature Circuits</h4>
+        <ul>
+          <li><a href="tours.html">The Classic Island Circuit (8D)</a></li>
+          <li><a href="tours.html">Wild Safari & Southern Surf (10D)</a></li>
+          <li><a href="tours.html">Ceylon High Tea & Ayurveda (12D)</a></li>
+          <li><a href="itinerary-planner.html">Custom Expedition Route Builder</a></li>
+          <li><a href="experiences.html#tea">Artisanal Tea Sommelier Tasting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Colombo Travel Sanctuary</h4>
+        <p class="footer-info">📍 42 Galle Face Court, Colombo 03, Sri Lanka</p>
+        <p class="footer-info">📞 +94 11 234 5678 / +94 77 123 4567</p>
+        <p class="footer-info">✉️ voyages@serendibjourneys.lk</p>
+        <div class="safeguard-badge">
+          <span>✓ SLTDA Certified Chauffeurs</span>
+          <span>✓ 100% Carbon-Neutral Travel</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Serendib Journeys Ltd. Crafted with deep island reverence for Sri Lanka Tourism.</p>
+        <div class="footer-legal">
+          <a href="about.html">Eco-Heritage Pledge</a>
+          <a href="contact.html">Visa ETA Guidance</a>
+          <a href="contact.html">Terms & Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
