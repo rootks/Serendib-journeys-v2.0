@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Serendib Journeys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar" id="topNav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-crest">
+          <svg viewBox="0 0 100 100" class="crest-svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#d4a34b" stroke-width="3" stroke-dasharray="4 2"/>
+            <circle cx="50" cy="50" r="38" fill="#0c382b" stroke="#f3cf7a" stroke-width="1.5"/>
+            <!-- Stylized sacred lotus petal crest -->
+            <path d="M50 16 C54 28 66 36 66 50 C66 62 50 78 50 78 C50 78 34 62 34 50 C34 36 46 28 50 16 Z" fill="#d4a34b"/>
+            <path d="M50 26 C52 34 58 40 58 50 C58 58 50 68 50 68 C50 68 42 58 42 50 C42 40 48 34 50 26 Z" fill="#fff5d0"/>
+            <circle cx="50" cy="50" r="5" fill="#c85a32"/>
+          </svg>
+        </div>
+        <div class="logo-group">
+          <span class="logo-title">Serendib<strong>Journeys</strong></span>
+          <span class="logo-tagline"><span class="sinhala-script">ආයුබෝවන්</span> • Sri Lanka Wonder of Asia</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="destinations.html" class="nav-link ">Destinations</a>
+        <a href="map-explorer.html" class="nav-link "><span class="live-beacon"></span>Interactive Map</a>
+        <a href="experiences.html" class="nav-link ">Experiences</a>
+        <a href="tours.html" class="nav-link ">Curated Tours</a>
+        <a href="itinerary-planner.html" class="nav-link ">Trip Planner</a>
+        <a href="about.html" class="nav-link ">Heritage</a>
+        <span id="authNavSlot" class="auth-nav-slot"></span>
+        <a href="contact.html" class="btn btn-nav"><span class="btn-lotus">🪷</span> Plan Your Voyage</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <section class="sub-hero bg-about">
+    <div class="sub-hero-overlay"></div>
+    <div class="container sub-hero-content">
+      <span class="royal-badge">Your Travel Dashboard</span>
+      <h1 id="accountGreeting">My Account</h1>
+      <p>Manage your profile, saved itineraries, and tour reservations in one place.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="account-tabs">
+        <button class="account-tab-btn active" data-tab="profile">👤 Profile</button>
+        <button class="account-tab-btn" data-tab="trips">🗺️ Saved Trips</button>
+        <button class="account-tab-btn" data-tab="bookings">🧳 My Bookings</button>
+      </div>
+
+      <!-- Profile Tab -->
+      <div class="account-tab-panel" id="tab-profile">
+        <div class="form-card" style="max-width: 560px;">
+          <h3 style="color: var(--royal-green); margin-bottom: 20px;">Profile Details</h3>
+          <form id="profileForm">
+            <div class="form-group">
+              <label for="pFullName">Full Name *</label>
+              <input type="text" id="pFullName" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="pEmail" disabled>
+            </div>
+            <div class="form-group">
+              <label for="pPhone">WhatsApp / Mobile</label>
+              <input type="tel" id="pPhone">
+            </div>
+            <div class="form-group">
+              <label for="pAccommodation">Preferred Accommodation Tier</label>
+              <select id="pAccommodation">
+                <option value="4-Star Boutique">4★ Heritage & Colonial Boutique Hotels</option>
+                <option value="5-Star Luxury">5★ Luxury Resorts & Private Pool Villas</option>
+                <option value="Eco-Glamping">Eco Safari Lodges & Luxury Canvas Glamping</option>
+                <option value="Standard Cozy">Standard / Cozy 3★ Country Inns</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-gold">Save Changes</button>
+            <button type="button" class="btn btn-outline" onclick="handleLogout()" style="margin-left: 10px;">Log Out</button>
+            <div id="profileStatus" class="form-feedback-box"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Saved Trips Tab -->
+      <div class="account-tab-panel" id="tab-trips" style="display:none;">
+        <p style="color: var(--text-secondary); margin-bottom: 18px;">Itineraries you've saved from the <a href="itinerary-planner.html">Trip Planner</a>.</p>
+        <div id="tripsList" class="account-card-list">
+          <p class="account-empty-msg">Loading your saved trips&hellip;</p>
+        </div>
+      </div>
+
+      <!-- Bookings Tab -->
+      <div class="account-tab-panel" id="tab-bookings" style="display:none;">
+        <p style="color: var(--text-secondary); margin-bottom: 18px;">Tour packages you've reserved from the <a href="tours.html">Curated Tours</a> page.</p>
+        <div id="bookingsList" class="account-card-list">
+          <p class="account-empty-msg">Loading your bookings&hellip;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-ornament-bar"></div>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-crest small">
+            <svg viewBox="0 0 100 100" class="crest-svg"><circle cx="50" cy="50" r="40" fill="#d4a34b"/><path d="M50 20 C60 35 65 50 50 75 C35 50 40 35 50 20 Z" fill="#082b21"/></svg>
+          </div>
+          <div class="logo-group">
+            <span class="logo-title">Serendib<strong>Journeys</strong></span>
+            <span class="logo-tagline">Sri Lanka DMC • Reg #SLTDA/TA/2026/09</span>
+          </div>
+        </a>
+        <p class="brand-desc">Curating authentic, luxury, and regenerative travel through the pearl of the Indian ocean. From cloud-swathed Ceylon tea peaks to the sacred ancient kingdoms.</p>
+        <div class="cultural-greeting-pill">
+          <span class="greeting-si">ආයුබෝවන් (Ayubowan)</span>
+          <span class="greeting-divider">•</span>
+          <span class="greeting-ta">வணக்கம் (Vanakkam)</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Kingdoms & Coast</h4>
+        <ul>
+          <li><a href="destinations.html#sigiriya">Sigiriya Lion Rock Fortress</a></li>
+          <li><a href="destinations.html#ella">Ella & Demodara Nine Arch</a></li>
+          <li><a href="destinations.html#yala">Yala Leopard Territory</a></li>
+          <li><a href="destinations.html#galle">Galle Dutch Bastions</a></li>
+          <li><a href="destinations.html#kandy">Kandy Sri Dalada Maligawa</a></li>
+          <li><a href="map-explorer.html">Interactive Island Google Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Signature Circuits</h4>
+        <ul>
+          <li><a href="tours.html">The Classic Island Circuit (8D)</a></li>
+          <li><a href="tours.html">Wild Safari & Southern Surf (10D)</a></li>
+          <li><a href="tours.html">Ceylon High Tea & Ayurveda (12D)</a></li>
+          <li><a href="itinerary-planner.html">Custom Expedition Route Builder</a></li>
+          <li><a href="experiences.html#tea">Artisanal Tea Sommelier Tasting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Colombo Travel Sanctuary</h4>
+        <p class="footer-info">📍 42 Galle Face Court, Colombo 03, Sri Lanka</p>
+        <p class="footer-info">📞 +94 11 234 5678 / +94 77 123 4567</p>
+        <p class="footer-info">✉️ voyages@serendibjourneys.lk</p>
+        <div class="safeguard-badge">
+          <span>✓ SLTDA Certified Chauffeurs</span>
+          <span>✓ 100% Carbon-Neutral Travel</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Serendib Journeys Ltd. Crafted with deep island reverence for Sri Lanka Tourism.</p>
+        <div class="footer-legal">
+          <a href="about.html">Eco-Heritage Pledge</a>
+          <a href="contact.html">Visa ETA Guidance</a>
+          <a href="contact.html">Terms & Cancellation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
